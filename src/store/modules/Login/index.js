@@ -74,7 +74,7 @@ const actions = {
     updatePermission(context, obj) {
         const permission = encodeAES(JSON.stringify(obj));
         localStorage.setItem("localUserPermission", permission);
-        context.commit('SET_USER_PERMISSION', obj);
+        context.commit('UPDATE_USER_PERMISSION', obj);
     },
     logout(context) {
         localStorage.removeItem("localUserInfo");
@@ -96,7 +96,7 @@ const mutations = {
     UPDATE_AUTH(state, obj) {
         state.authorization = obj;
     },
-    SET_USER_PERMISSION(state, obj) {
+    UPDATE_USER_PERMISSION(state, obj) {
         state.userPermission = obj;
     },
     DELETE_USER_PERMISSION(state, obj) {
