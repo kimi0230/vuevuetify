@@ -35,22 +35,27 @@ let getToken = routerName => {
 
 //判別是否有權限
 let checkPermission = routerName => {
-  return true;
+  // const userPermission = getStorage("localUserPermission");
+  // console.log("userPermission", userPermission);
+  // let id = userPermission["allowURL"] ? userPermission["allowURL"][routerName] : "";
+  // console.log("id", id);
+  // return userPermission.allowID.includes(id);
+  return true
 };
 
 // 中間層檢查token 判別權限
 let checkToken = (to, from, next) => {
   let token = getToken();
-  let permission = checkPermission(to.name);
+  let permission = checkPermission(to.path);
   switch (to.name) {
     case "login":
       token && next("/");
       token || next();
       break;
-    case "home":
-      token && next();
-      token || next("/login");
-      break;
+      // case "home":
+      //   token && next();
+      //   token || next("/login");
+      //   break;
     default:
       if (token && permission) {
         next();
@@ -98,7 +103,7 @@ const routes = [{
     component: AdminLayout,
     children: [{
       path: 'calendar',
-      name: 'test',
+      name: 'calendar',
       component: Calendar
     }, {
       path: 'steps',

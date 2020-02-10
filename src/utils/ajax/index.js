@@ -9,7 +9,8 @@ axios.interceptors.request.use(
     config => {
         // header 塞 auth
         config.headers = {
-            authorization: app.$store.getters.getAuth
+            "content-type": "application/json",
+            "Authorization": app.$store.getters.getAuth
         }
         return config;
     },
