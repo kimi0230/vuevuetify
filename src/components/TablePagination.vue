@@ -49,11 +49,11 @@
         </template>
         <!-- 時間處理 -->
         <template v-slot:item.createdAt="{ item, header, value }">
-          <time-format :timeValue="value"/>
+          <time-format :timeValue="value" />
         </template>
         <!-- 時間處理 -->
         <template v-slot:item.updatedAt="{ item, header, value }">
-          <time-format :timeValue="value"/>
+          <time-format :timeValue="value" />
         </template>
         <!-- 時間處理 -->
 
@@ -66,7 +66,7 @@
 
       <!-- 分頁按鈕 -->
       <v-pagination
-        v-model="page"
+        v-model="nowPage"
         :circle="circle"
         :disabled="disabled"
         :length="length"
@@ -162,6 +162,7 @@ export default {
       search: dataTable.initConfig.search,
       length: dataTable.initConfig.length,
       page: dataTable.initConfig.page,
+      nowPage: 1,
       circle: dataTable.initConfig.circle,
       disabled: dataTable.initConfig.disabled,
       nextIcon: dataTable.initConfig.nextIcon,
@@ -189,7 +190,7 @@ export default {
       const vm = this;
       const ajaxParam = {
         keyWord: this.search,
-        page: this.page,
+        page: this.nowPage,
         itemsPerPage: this.itemsPerPage,
         sortBy: this.options.sortBy[0],
         sortMethod: this.options.sortDesc[0] ? "desc" : "asc"
@@ -210,7 +211,7 @@ export default {
           });
         } else {
           this.items = data.Data.items;
-          this.page = data.Data.page;
+          this.nowPage = data.Data.page;
           this.length = data.Data.totalPages;
         }
         this.loading = false;
@@ -340,7 +341,7 @@ export default {
     dialog(val) {
       val || this.close();
     },
-    page() {
+    nowPage() {
       this.getFromAjax();
     },
     options() {
