@@ -1,0 +1,100 @@
+/* Login */
+.welcome {
+  margin-bottom: -0.35em;
+  opacity: 0.3;
+  font-size: $font-welcome;
+  font-weight: $font-weight-bold;
+  color: $light-teal;
+}
+
+.forget {
+  padding: 0 15px;
+  margin: -25px 0 45px 0;
+  a {
+    color: $tealish!important;
+  }
+}
+
+/* Form */
+.formWrap {
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+
+  .form-title {
+    margin-bottom: 45px;
+    h2, span {
+      color: $dark-grey-blue;
+      text-align: center;
+    }
+    h2 {
+      padding: 40px 0 10px 0;
+      font-size: $font-large-x5;
+    }
+    span {
+      display: block;
+      opacity: 0.7;
+      font-size: $font-large;
+      text-align: center;
+    }
+  }
+
+  .v-input__slot {
+    margin-top: 38px;
+    label {
+      top: -10px;
+      left: -12px!important;
+      font-size: $font-large-x2;
+      font-weight: $font-weight-bold;
+    }
+    legend {
+      display: none;
+    }
+  }
+
+  .v-label {
+    font-size: $font-large-x2;
+    color: $dark-grey-blue;
+  }
+
+  .v-text-field--outlined {
+    border-radius: 6px;
+    fieldset {
+      border: 2px solid $pale-grey;
+    }
+    :hover fieldset {
+      border-color: $dark-grey-blue!important;
+    }
+    input {
+      color: $dark-grey-blue!important;
+      font-size: $font-large-x1;
+      line-height: 1.45em;
+    }
+  }
+
+  .v-btn {
+    min-width: 172px!important;
+    min-height: 68px!important;
+    border-radius: 45px;
+    margin-bottom: 16px;
+    font-size: $font-large-x3;
+  }
+}
+
+/* Forget */
+.goBack {
+  position: relative;
+  height: 30px;
+  margin-bottom: 25px;
+  font-size: $font-large-x3;
+  opacity: 0.3;
+  align-content: top;
+  a {
+    text-decoration: none;
+  }
+  span {
+    position: absolute;
+    top: -4px;
+    left: 40px;
+  }
+}

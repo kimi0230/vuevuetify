@@ -68,6 +68,36 @@ let checkToken = (to, from, next) => {
   }
 };
 
+// 多 middleware
+function guards(guards) {
+  return async (to, from, next) => {
+
+    // a flag to discard remaining guards
+    let changed = false;
+
+    // handle next for multiple guards
+    const mNext = function (value) {
+      // prevent calling next after it is already resolved with a value
+      if (changed) return;
+
+      // if we have 'value' reslove next with the value and set changed flag 
+      if (typeof value != 'undefined') {
+        changed = true;
+        next(value);
+      }
+    };
+
+    // call guards
+    for (let i = 0; i < guards.length; i++) {
+      if (changed) break;
+      await guards[i](to, from, mNext);
+    }
+
+    // move on if none of guards resolved next with a value
+    if (!changed) next();
+
+  }
+}
 
 const routes = [{
     path: '*', // 不存在的頁面自動導到登入頁

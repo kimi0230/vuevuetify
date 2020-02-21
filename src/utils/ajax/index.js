@@ -5,13 +5,22 @@ import {
 import {
     app
 } from "@/main";
+import {
+    getStorage
+}
+from '@/utils/localstorage'
 axios.interceptors.request.use(
     config => {
         // header 塞 auth
         config.headers = {
             "content-type": "application/json",
             "Authorization": app.$store.getters.getAuth
-        }
+        };
+        // 補上token, 語言, 時區
+        const userInfo = getStorage("localUserInfo");
+        config.data["userToken"] = userInfo.token;
+        config.data["lang"] = userInfo.lang;
+        config.data["zone"] = userInfo.userZone;
         return config;
     },
     error => {

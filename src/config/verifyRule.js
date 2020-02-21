@@ -19,10 +19,19 @@ const passwordRule = [
 
 const requiredRule = [
     value => !!value || "Required.",
-]
+];
+
+const phoneRule = [
+    value => !!value || "Required.",
+    value => {
+        const pattern = /^09[0-9]{8}$/;
+        return pattern.test(value) || "Invalid phone.";
+    }
+];
 
 export default {
     emailRule,
     passwordRule,
     requiredRule,
+    phoneRule,
 }

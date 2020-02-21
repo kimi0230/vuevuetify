@@ -9,6 +9,10 @@ export const encodeAES = value => {
 
 //解密規則
 export const decodeAES = value => {
-    var bytes = CryptoJS.AES.decrypt(value, secretKey);
-    return JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
+    if (value) {
+        var bytes = CryptoJS.AES.decrypt(value, secretKey);
+        return JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
+    } else {
+        return ""
+    }
 };
