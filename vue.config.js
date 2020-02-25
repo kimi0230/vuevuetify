@@ -13,7 +13,8 @@ module.exports = {
   configureWebpack: {
     resolve: {
       alias: {
-        "@SM": "@/store/modules"
+        "@SM": "@/store/modules",
+        "@LANG": "@/lang"
       }
     }
   },
