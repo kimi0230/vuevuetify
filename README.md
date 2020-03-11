@@ -22,3 +22,6 @@ yarn test:unit
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### Mock API
+See [Github kimi/mockAPI](https://github.com/kimi0230/mockAPI).

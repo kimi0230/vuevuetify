@@ -23,7 +23,9 @@ const initInfo = {
     name: "",
     avatarPath: "",
     token: "",
-    expirationDate: ""
+    expirationDate: "",
+    lang: "",
+    userZone: ""
 }
 
 const actions = {
@@ -53,7 +55,9 @@ const actions = {
                     name: data.Data.name,
                     avatarPath: data.Data.avatarPath,
                     token: data.Data.token,
-                    expirationDate: data.Data.expirationDate
+                    expirationDate: data.Data.expirationDate,
+                    lang: data.Data.lang,
+                    userZone: data.Data.userZone
                 });
                 dispatch("updatePermission", {
                     allowURL: data.Data.allowURL,
@@ -97,6 +101,7 @@ const mutations = {
         state.authorization = obj;
     },
     UPDATE_USER_PERMISSION(state, obj) {
+        app.$i18n.locale = obj.lang;
         state.userPermission = obj;
     },
     DELETE_USER_PERMISSION(state, obj) {

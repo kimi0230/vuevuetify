@@ -1,4 +1,7 @@
 {
-    "login": "login",
-    "open_hours": "open hours"
+    "login": "Login",
+    "open_hours": "Open Hours",
+    "open_weeks": "Open Weeks",
+    "continue": "Continue",
+    "required": "Required."
 }

@@ -1,4 +1,7 @@
 {
-    "login":"登入",
-    "open_hours": "營業時間"
+    "login": "登入",
+    "open_hours": "營業時段",
+    "open_weeks": "營業週期",
+    "continue":"繼續",
+    "required":"必填"
 }
