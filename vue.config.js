@@ -14,7 +14,10 @@ module.exports = {
     resolve: {
       alias: {
         "@SM": "@/store/modules",
-        "@LANG": "@/lang"
+        "@UTILS": "@/utils",
+        "@LANG": "@/lang",
+        "@VIEW": "@/views",
+        "@LAYOUT": "@/layout"
       }
     }
   },

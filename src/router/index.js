@@ -10,6 +10,11 @@ import Steps from '@/views/test/Steps.vue'
 import moment from "moment";
 
 import {
+  loadView,
+  loadLayoutView
+} from "@UTILS/other/routerLoadView.js";
+
+import {
   getStorage
 }
 from '@/utils/localstorage'
@@ -105,40 +110,40 @@ const routes = [{
   }, {
     path: '/login',
     name: 'loginRoot',
-    component: LoginLayout,
+    component: loadLayoutView("LoginLayout"),
   }, {
     path: '/admin',
     name: 'admin',
-    component: AdminLayout,
+    component: loadLayoutView("AdminLayout"),
     children: [{
       path: 'home',
       name: 'home',
       beforeEnter: checkToken,
-      component: Home
+      component: loadView("Home", "admin")
     }, {
       path: 'user',
       name: 'userList',
       beforeEnter: checkToken,
-      component: User
+      component: loadView("User", "admin")
     }, {
       path: 'pet',
       name: 'petList',
       beforeEnter: checkToken,
-      component: MyTable
+      component: loadView("MyTable", "admin")
     }]
   },
   {
     path: '/test',
     name: 'test',
-    component: AdminLayout,
+    component: loadLayoutView("AdminLayout"),
     children: [{
       path: 'calendar',
       name: 'calendar',
-      component: Calendar
+      component: loadView("Calendar", "test")
     }, {
       path: 'steps',
       name: 'steps',
-      component: Steps
+      component: loadView("Steps", "test")
     }]
   }
 ]
