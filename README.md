@@ -25,3 +25,12 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### Mock API
 See [Github kimi/mockAPI](https://github.com/kimi0230/mockAPI).
+
+### Datatable List
+![image]("./screenshot/list.png")
+
+### Datatable New
+![image]("./screenshot/new.png")
+
+### Datatable Edit
+![image]("./screenshot/edit.png")
