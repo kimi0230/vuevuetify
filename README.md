@@ -27,10 +27,10 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 See [Github kimi/mockAPI](https://github.com/kimi0230/mockAPI).
 
 ### Datatable List
-![image]("./screenshot/list.png")
+![image]("https://github.com/kimi0230/vuevuetify/blob/master/screenshot/list.png")
 
 ### Datatable New
-![image]("./screenshot/new.png")
+![image]("https://github.com/kimi0230/vuevuetify/blob/master/screenshot/new.png")
 
 ### Datatable Edit
-![image]("./screenshot/edit.png")
+![image]("https://github.com/kimi0230/vuevuetify/blob/master/screenshot/edit.png")
