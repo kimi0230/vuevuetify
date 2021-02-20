@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-content>
-      <HelloWorld/>
+      <HelloWorld />
     </v-content>
   </v-app>
 </template>
@@ -12,8 +12,8 @@ export default {
   name: "App",
 
   components: {
-    HelloWorld
+    HelloWorld,
   },
-  data: () => ({})
+  data: () => ({}),
 };
 </script>
