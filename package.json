@@ -25,7 +25,7 @@
     "axios": "^0.21.1",
     "core-js": "^3.3.2",
     "crypto-js": "^3.1.9-1",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "serialize-javascript": "^3.1.0",
     "url-loader": "^3.0.0",
     "vue": "^2.6.10",
